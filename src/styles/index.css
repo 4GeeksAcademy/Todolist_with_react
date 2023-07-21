@@ -1,12 +1,66 @@
+body {
+    margin-top: 10px;
+    background-color:lightgray;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    box-shadow: gray 0px 40px 50px 1px;
+}
+ul li {
+    border: 1px solid gray;
+    list-style: none;
+    justify-content: space-between;
+    background-color: white;
+    padding-left: 30px;
+    border-top: none;
+}
+h1 {
+    text-align: center;
+    color: lightgoldenrodyellow;
+    font-size: 170px;
+    font-family: 'Times New Roman', Times, serif;
+}
+input {
+    width: 100%;
+    padding-left: 30px;
+    outline: 0; 
+}
+p {
+    color: gray;
+    border: 1px solid gray;
+    border-top: none;
+    background-color: white;
+    padding-left: 15px;
+    height: 25px;
+    width: 100%;
+    margin-bottom: 0;
+}
+.firstBlock {
+    border: 1px solid gray;
+    border-top: none;
+    height: 7px;
+    margin: 0px 5px 0px 5px;
+    background-color: white;
+    box-shadow: 0px 3px 10px gray;
+}
+.SecondBlock{
+    border: 1px solid gray;
+    border-top: none;
+    height: 7px;
+    background-color: white;
+    margin: 0px 10px 0px 10px;
+    box-shadow: 0px 3px 10px gray;
+}
+i { 
+    float: right;
+    margin: 4px 8px 0px 0px;
+    visibility: hidden;
+}
+li:hover i{
+    float: right;
+    margin: 4px 8px 0px 0px;
+    color: #90182a;
+    visibility: visible;
+}
 
-/* 
-
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
