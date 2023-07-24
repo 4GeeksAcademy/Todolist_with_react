@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //create your first component
 const Alert = (props) => {
@@ -16,5 +16,8 @@ const Alert = (props) => {
     }
 };
 
+Alert.prototype = {
+	list: PropTypes.number
+}
 
 export default Alert;
