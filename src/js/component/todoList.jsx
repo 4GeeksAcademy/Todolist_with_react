@@ -71,11 +71,11 @@ const handleKeyDown = event => {
 
 	//function to delete all tasks 
 	const cleanAllTasks = () => {
-		list.forEach(removeTodo())
+		list.forEach(setList([]))
 	
 		  fetch('https://jsonplaceholder.typicode.com/todos', {
 			method: "PUT",
-			body: JSON.stringify(newTodo),
+			body: JSON.stringify([]),
 			headers: {
 			  "Content-Type": "application/json"
 			}
