@@ -69,10 +69,36 @@ const handleKeyDown = event => {
 		.catch(error => console.error(error));
 	}
 
+	//function to delete all tasks 
+	const cleanAllTasks = () => {
+		list.forEach(removeTodo())
+	
+		  fetch('https://jsonplaceholder.typicode.com/todos', {
+			method: "PUT",
+			body: JSON.stringify(newTodo),
+			headers: {
+			  "Content-Type": "application/json"
+			}
+		  })
+		  .then(resp => {
+			console.log(resp.ok); // will be true if the response is successfull
+			console.log(resp.status); // the status code = 200 or code = 400 etc.
+			console.log(resp.text()); // will try return the exact result as string
+			return resp.json(); // (returns promise) will try to parse the result as json as return a promise that you can .then for results
+		})
+		.then(data => {
+			//here is where your code should start after the fetch finishes
+			console.log(data); //this will print on the console the exact object received from the server
+		})
+		.catch(error => {
+			//error handling
+			console.log(error);
+		});
+	}
+
 //adding a new todo with map method 
 return (
 	<div className="container">
-		<div>
 			<Alert list = {list} />
 			<h1>todos</h1>
 			<div>
@@ -84,8 +110,7 @@ return (
 			))}
 			</ul>
 				<Paragraf newText = {list.length} />
-		</div>
-		
+		<Button cleanAllTasks = {cleanAllTasks} />
 	</div>
 );
 };
