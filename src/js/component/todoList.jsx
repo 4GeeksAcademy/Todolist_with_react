@@ -34,7 +34,6 @@ const handleKeyDown = event => {
 	if (event.key === 'Enter') {
 		setList(list.concat(newTodo)) 
 		setNewTodo("");
-	  }
 
 	  fetch('https://jsonplaceholder.typicode.com/todos', {
 			method: 'POST',
@@ -50,6 +49,7 @@ const handleKeyDown = event => {
 		.then(response => console.log('Success:', response))
 		.catch(error => console.error(error));
 	};
+}
 
 	//function for removing the element when the task is done
 	const removeTodo = (currentIndex) => {
@@ -71,7 +71,7 @@ const handleKeyDown = event => {
 
 	//function to delete all tasks 
 	const cleanAllTasks = () => {
-		list.forEach(setList([]))
+		setList([])
 	
 		  fetch('https://jsonplaceholder.typicode.com/todos', {
 			method: "PUT",
